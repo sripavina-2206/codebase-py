@@ -1,0 +1,19 @@
+def calculator():
+    print("--- Simple Python Calc ---")
+    try:
+        num1 = float(input("Enter first number: "))
+        op = input("Enter operator (+, -, *, /): ")
+        num2 = float(input("Enter second number: "))
+
+        if op == '+': print("Result:", num1 + num2)
+        elif op == '-': print("Result:", num1 - num2)
+        elif op == '*': print("Result:", num1 * num2)
+        elif op == '/': print("Result:", num1 / num2)
+        else: print("Invalid Operator")
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero")
+    except ValueError:
+        print("Error: Please enter numbers only")
+
+if __name__ == "__main__":
+    calculator()
