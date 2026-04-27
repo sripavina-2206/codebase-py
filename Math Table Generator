@@ -1,0 +1,14 @@
+def math_table(n):
+    print("\nMultiplication Table for: " + str(n))
+    print("-" * 25)
+    for i in range(1, 11):
+        result = n * i
+        # Using .format() instead of f-strings for older Python compatibility
+        print("{} x {} = {}".format(n, i, result))
+
+if __name__ == "__main__":
+    try:
+        num = int(input("Enter a number: "))
+        math_table(num)
+    except ValueError:
+        print("Error: Please enter a valid integer.")
