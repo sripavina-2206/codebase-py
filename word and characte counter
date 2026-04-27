@@ -1,0 +1,13 @@
+def analyze_text(text):
+    words = text.split()
+    word_count = len(words)
+    char_count = len(text)
+
+    print("\n--- Text Analysis ---")
+    print("Total Words: " + str(word_count))
+    print("Total Characters: " + str(char_count))
+    print("Words in Uppercase: " + text.upper())
+
+if __name__ == "__main__":
+    user_input = input("Enter a sentence to analyze: ")
+    analyze_text(user_input)
