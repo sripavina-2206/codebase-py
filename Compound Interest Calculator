@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    double principal, rate, amount;
+    int years;
+
+    printf("=== COMPOUND INTEREST CALCULATOR ===\n");
+    printf("Enter initial investment amount (Rs.): ");
+    scanf("%lf", &principal);
+    printf("Enter annual interest rate (%%): ");
+    scanf("%lf", &rate);
+    printf("Enter investment duration (years): ");
+    scanf("%d", &years);
+
+    rate = rate / 100.0; // Convert percentage to decimal
+    amount = principal;
+
+    printf("\n%-10s %-20s\n", "Year", "Account Balance");
+    printf("----------------------------------\n");
+    
+    for (int i = 1; i <= years; i++) {
+        amount += amount * rate; // Add interest for the year
+        printf("Year %-6d Rs. %-18.2f\n", i, amount);
+    }
+
+    printf("----------------------------------\n");
+    printf("Total Interest Earned: Rs. %.2f\n", amount - principal);
+    return 0;
+}
