@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int guess, attempts = 0;
+    srand(time(NULL)); // Seed random generator with system time
+    int secret = (rand() % 100) + 1; // Number between 1 and 100
+
+    printf("=== HIGH-LOW GUESSING GAME ===\n");
+    printf("I chosen a number between 1 and 100. Guess it!\n");
+
+    do {
+        printf("Enter your guess: ");
+        if (scanf("%d", &guess) != 1) {
+            printf("Please enter a valid number.\n");
+            return 1;
+        }
+        attempts++;
+
+        if (guess > secret) {
+            printf("Too high! Try a lower number.\n");
+        } else if (guess < secret) {
+            printf("Too low! Try a higher number.\n");
+        } else {
+            printf("🎉 Correct! You guessed it in %d attempts.\n", attempts);
+        }
+    } while (guess != secret);
+
+    return 0;
+}
