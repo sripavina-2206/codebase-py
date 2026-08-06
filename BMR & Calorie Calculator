@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    float weight, height, bmr;
+    int age, gender;
+
+    printf("=== HEALTH & METABOLIC APP ===\n");
+    printf("Select Biological Gender:\n1. Male\n2. Female\nEnter option: ");
+    scanf("%d", &gender);
+    
+    printf("Enter weight in kg: ");
+    scanf("%f", &weight);
+    printf("Enter height in cm: ");
+    scanf("%f", &height);
+    printf("Enter age in years: ");
+    scanf("%d", &age);
+
+    if (gender == 1) {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+    } else {
+        bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+    }
+
+    printf("\n🔥 Your estimated baseline BMR is: %.2f kcal/day\n", bmr);
+    printf("This is the raw energy required to function at rest.\n");
+    return 0;
+}
